@@ -1,0 +1,461 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: var(--fifth-color);
+}
+
+:root {
+    --primary-color: #002333;
+    --second-color: #159A9C;
+    --third-color: #DEEFE7;
+    --fourth-color: #B4BEC9;
+    --fifth-color: #FFFFFF;
+    --primary-shadow: rgba(0, 35, 51, 0.5);
+}
+
+.container-intro h1 {
+    color: var(--primary-color);
+    font-size: 2.3em;
+}
+
+.container-intro p {
+    margin: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.container {
+    padding: 3rem;
+    text-align: center;
+    scroll-margin-top: 75px;
+}
+
+.container-techno {
+    margin: 1.4rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.techno {
+    background-color: var(--third-color);
+    border: none;
+    border-radius: 10px;
+    padding: 0.3rem 0.5rem;
+    color: var(--primary-color);
+}
+
+
+.container-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.container-buttons button {
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    border: none;
+    padding: 0.6rem 2rem;
+    display: flex;
+    gap: 1rem;
+    color: var(--fifth-color);
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.container-buttons button:nth-of-type(2) {
+    color: var(--primary-color);
+    background-color: var(--fifth-color);
+    border: 2px solid var(--primary-color);
+}
+
+.container-about-me {
+    background-color: var(--second-color);
+    color: var(--fifth-color);
+
+}
+
+.container-description-card {
+    display: flex;
+    gap: 4rem;
+}
+
+.container-description-card .description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.container-description-card .container-cards {
+    flex: 1.3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.container-description-card .card {
+    border: none;
+    background-color: var(--third-color);
+    padding: 2.5rem 1.5rem;
+    border-radius: 7px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.container-description-card .card * {
+    margin: 0.5rem;
+}
+
+.container-hero {
+    width: 60%;
+    margin: 4.5rem auto;
+    text-align: center;
+    color: var(--primary-color);
+    scroll-margin-top: 120px;
+}
+
+.container-hero h1,
+h2 {
+    margin: 1rem 0;
+}
+
+.container-hero h2 {
+    font-size: 1.7rem;
+}
+
+.container-hero p {
+    margin: 3rem;
+    font-size: 1.3rem;
+}
+
+.container-hero h1 {
+    font-size: 4rem;
+}
+
+.container-hero h2 {
+    color: var(--primary-color);
+}
+
+.hero-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    gap: 1rem;
+}
+
+.hero-socials a {
+    color: var(--primary-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 4rem;
+    box-shadow: 0 0 10px 5px var(--primary-shadow);
+    color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    background-color: var(--fifth-color);
+    z-index: 9999;
+}
+
+nav h1 {
+    font-size: 1.9rem;
+}
+
+nav h1 a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    display: flex;
+    gap: 4rem;
+    list-style: none;
+    font-size: 1.05rem;
+}
+
+ul a {
+    cursor: pointer;
+}
+
+.container-projects {
+    background-color: var(--second-color);
+}
+
+.container-intro p {
+    color: var(--fifth-color);
+}
+
+.container-projects img {
+    width: 100%;
+    height: 420px;
+    border-radius: 8px 8px 0 0;
+}
+
+.container-projects .cards {
+    border: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.container-projects .card {
+    flex: 0 0 50%;
+    background-color: var(--fifth-color);
+    border-radius: 8px;
+    padding-bottom: 2rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.container-projects .card:hover {
+    transform: scale(1.02);
+}
+
+.project-description {
+    padding: 0 1rem;
+}
+
+.project-description h2 {
+    text-align: left;
+    font-size: 2rem;
+}
+
+.project-description p {
+    text-align: justify;
+}
+
+
+.container-projects .techno {
+    background-color: var(--primary-color);
+    color: var(--third-color);
+}
+
+.buttons-projects {
+    justify-content: start;
+}
+
+.container-buttons a {
+    text-decoration: none;
+    color: var(--third-color);
+}
+
+.container-buttons button:nth-child(2) a {
+    color: var(--primary-color);
+}
+
+.container-skills .container-intro p {
+    color: var(--primary-color);
+}
+
+.container-skill-cards {
+    margin: 1rem 1.5rem;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.skill-card {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.skill-card h3 {
+    color: var(--third-color);
+    font-size: 1.6rem;
+}
+
+.container-contact {
+    color: var(--primary-color);
+}
+
+.container-contact .container-intro p {
+    color: var(--primary-color);
+}
+
+.contact-content {
+    text-align: start;
+    display: flex;
+    gap: 1rem;
+}
+
+.container-info-contact {
+    flex: 2;
+}
+
+.container-details {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem;
+    margin-left: 0;
+}
+
+.container-details .info * {
+    margin: .5rem;
+}
+
+.container-details .container-icon {
+    background-color: var(--third-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.3rem;
+    border-radius: 6px;
+}
+
+.container-form {
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--third-color);
+    font-size: 1.1rem;
+}
+
+.container-form p {
+    font-size: 1rem;
+}
+
+.container-form button {
+    cursor: pointer;
+}
+
+input,
+textarea {
+    padding: .6rem .3rem;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+textarea {
+    resize: none;
+    overflow-y: auto;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 0.8rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 5px 10px -5px var(--primary-shadow);
+}
+
+input:hover,
+textarea:hover {
+    transform: scale(1.005);
+    outline: none;
+    box-shadow: 0 5px 10px -5px var(--primary-shadow);
+}
+
+
+.container-inputs {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container-half-input {
+    display: flex;
+    gap: 1rem;
+}
+
+.half-input {
+    flex: 1;
+}
+
+.container-form button {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    border: none;
+    padding: 0.6rem 2rem;
+    display: flex;
+    gap: 1rem;
+    color: var(--fifth-color);
+    font-size: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--fifth-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem;
+}
+
+footer h3 {
+    font-size: 1.6rem;
+}
+
+footer ul {
+    margin-top: 1rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer-info .icon {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.3rem;
+    color: var(--fifth-color);
+}
+
+.footer-info .icon a {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.3rem;
+    color: var(--fifth-color);
+}
+
+.quick-links ul {
+    cursor: pointer;
+}
+
+.quick-links a {
+    text-decoration: none;
+    color: var(--fifth-color);
+}
