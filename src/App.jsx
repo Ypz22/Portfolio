@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import './../public/styles/styles.css'
-import Nav from './components/Layout/Nav/Nav.jsx'
+import Nav from './Components/Layout/NavBar/Nav.jsx'
 import Hero from './components/Hero/Hero.jsx'
 import AboutMe from './components/AboutMe/AboutMe.jsx'
 import Skills from './components/Skills/Skills.jsx'
