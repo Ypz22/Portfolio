@@ -28,10 +28,10 @@ const ContactMe = () => {
         e.preventDefault();
 
         emailjs.sendForm(
-            'service_ad6ip4j',
-            'template_g7rn7rt',
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
             form.current,
-            'P1jwhSrO22t4Jgr1w'
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
             .then((result) => {
                 toastr.success("Correo enviado correctamente!");
