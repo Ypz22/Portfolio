@@ -471,7 +471,7 @@ footer ul {
 
     .nav-open {
         padding: 1.5rem;
-        font-size: 1.5rem;
+        font-size: 1rem;
         line-height: 3rem;
         max-height: 500px;
         opacity: 1;
@@ -489,7 +489,7 @@ footer ul {
 
     .nav-closed {
         padding: 1.5rem;
-        font-size: 1.5rem;
+        font-size: 1rem;
         max-height: 0;
         opacity: 0;
         transform: translateY(-10px);
