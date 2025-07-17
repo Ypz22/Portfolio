@@ -7,6 +7,7 @@ import ContactMe from "./ContactMe";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 import { useEffect } from "react";
 
 const Contact = () => {

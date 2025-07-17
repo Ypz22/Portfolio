@@ -25,7 +25,7 @@ const AboutMe = () => {
     ]
 
     return (
-        <div className="container container-about-me" data-aos="fade-right" id="About">
+        <div className="container container-about-me" data-aos="zoom-in" id="About">
             <SeccionIntro {...introAboutMe} />
             <div className="container-description-card">
                 <AboutMeDescription />

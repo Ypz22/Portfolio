@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 
+
 const ProjectCard = (props) => {
     useEffect(() => {
         AOS.init({
