@@ -2,9 +2,21 @@ import React from "react";
 
 import ProjectsButtons from "./ProjectsButtons";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import { useEffect } from "react";
+
+
 const ProjectCard = (props) => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    }, []);
     return (
-        <div className="card">
+        <div className="card" data-aos="zoom-in">
             <img src={props.img} alt={props.name} />
             <div className="project-description">
                 <h2>{props.name}</h2>
