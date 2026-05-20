@@ -1,28 +1,26 @@
-import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import usePortfolio from '../../hooks/usePortfolio'
 
 const HeroButtons = () => {
-    const scrollToContact = () => {
-        const contactSection = document.getElementById('Contact');
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-    return (
-        <div className="container-buttons">
-            <button onClick={scrollToContact}><FontAwesomeIcon icon={faEnvelope} />Contact me</button>
-            <button onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/Jefferson_Yepez_CV.pdf';
-                link.download = 'Jefferson_Yepez_CV.pdf';
-                link.click();
-            }}>
-                <FontAwesomeIcon icon={faArrowDown} /> Download CV
-            </button>
+  const { content } = usePortfolio()
 
-        </div>
-    )
-};
+  const scrollToContact = () => {
+    document.getElementById('Contact')?.scrollIntoView({ behavior: 'smooth' })
+  }
 
-export default HeroButtons;
+  return (
+    <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+      <button type="button" onClick={scrollToContact} className="primary-action">
+        <FontAwesomeIcon icon={faEnvelope} />
+        {content.ui.workTogether}
+      </button>
+      <a href="/Jefferson_Yepez_CV.pdf" download className="secondary-action">
+        <FontAwesomeIcon icon={faArrowDown} />
+        {content.ui.downloadCv}
+      </a>
+    </div>
+  )
+}
+
+export default HeroButtons

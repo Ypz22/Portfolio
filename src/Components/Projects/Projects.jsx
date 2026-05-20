@@ -1,31 +1,29 @@
-import React from "react";
-import SeccionIntro from "../SeccionIntro";
-import ProjectCard from "./ProjectCard";
-import { projects } from "../../data/projectsData";
-import { introProjects } from "../../data/introsData";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-import { useEffect } from "react";
+import SeccionIntro from '../SeccionIntro'
+import ProjectCard from './ProjectCard'
+import usePortfolio from '../../hooks/usePortfolio'
 
 const Projects = () => {
+  const { content } = usePortfolio()
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    }, []);
-
-
-    return (
-        <div className="container container-projects" data-aos="fade-right" id="Projects">
-            <SeccionIntro {...introProjects} />
-            <div className="cards">
-                {projects.map(project => (<ProjectCard key={project.name} {...project} />))}
-            </div>
+  return (
+    <section id="Projects" className="section-anchor py-[clamp(4.5rem,8vw,6.5rem)]">
+      <div className="section-shell">
+        <div data-aos="fade-up">
+          <SeccionIntro {...content.sectionIntro.projects} />
         </div>
-    )
-};
 
-export default Projects;
+        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          {content.projects.map((project, index) => (
+            <ProjectCard
+              key={project.name}
+              {...project}
+              featured={index === 0 || index === 3}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Projects

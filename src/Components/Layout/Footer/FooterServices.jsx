@@ -1,18 +1,22 @@
-import React from "react";
+import usePortfolio from '../../../hooks/usePortfolio'
 
 const FooterServices = () => {
-    return (
-        <div>
-            <h3>Services</h3>
-            <ul>
-                <li>Full Stack Web Development</li>
-                <li>React/Next.js Applications</li>
-                <li>APIs and Microservices</li>
-                <li>Technical Consulting</li>
-                <li>Performance Optimization</li>
-            </ul>
-        </div>
-    )
-};
+  const { content } = usePortfolio()
 
-export default FooterServices;
+  return (
+    <div>
+      <h3 className="font-display text-xl font-semibold tracking-[-0.03em] text-[var(--ink)]">
+        {content.footer.servicesTitle}
+      </h3>
+      <ul className="mt-5 space-y-3">
+        {content.footer.services.map((service) => (
+          <li key={service} className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+            {service}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export default FooterServices

@@ -1,40 +1,32 @@
-import React from "react";
-import AboutMeDescription from "./AboutMeDescription";
-import AboutMeCard from "./AboutMeCard";
-import { faCode, faUserGroup, faLightbulb, faBullseye } from '@fortawesome/free-solid-svg-icons';
-import SeccionIntro from "../SeccionIntro";
-import { introAboutMe } from "../../data/introsData";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-import { useEffect } from "react";
+import AboutMeDescription from './AboutMeDescription'
+import AboutMeCard from './AboutMeCard'
+import SeccionIntro from '../SeccionIntro'
+import usePortfolio from '../../hooks/usePortfolio'
 
 const AboutMe = () => {
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    }, []);
+  const { content } = usePortfolio()
 
-    const cards = [
-        { icon: faCode, label: "Programming Languages", description: "Proficient in JavaScript, C#, Java and more" },
-        { icon: faBullseye, label: "Full Stack Development", description: "Complete frontend and backend experience" },
-        { icon: faUserGroup, label: "Team Collaboration", description: "Experience working in agile teams" },
-        { icon: faLightbulb, label: "Problem Solving", description: "Innovative solutions for complex challenges" }
-    ]
-
-    return (
-        <div className="container container-about-me" data-aos="zoom-in" id="About">
-            <SeccionIntro {...introAboutMe} />
-            <div className="container-description-card">
-                <AboutMeDescription />
-                <div className="container-cards">
-                    {cards.map(card => (<AboutMeCard key={card.label} {...card} />))}
-                </div>
-            </div>
+  return (
+    <section id="About" className="section-anchor py-[clamp(4.5rem,8vw,6.5rem)]">
+      <div className="section-shell">
+        <div data-aos="fade-up">
+          <SeccionIntro {...content.sectionIntro.about} />
         </div>
-    )
-};
 
-export default AboutMe;
+        <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+          <div data-aos="fade-right" className="surface-panel rounded-[2rem] p-7 sm:p-8">
+            <AboutMeDescription paragraphs={content.aboutParagraphs} />
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2">
+            {content.aboutHighlights.map((card) => (
+              <AboutMeCard key={card.label} {...card} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default AboutMe

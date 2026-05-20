@@ -1,34 +1,23 @@
-import React from "react";
-import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import ContactDetails from "./ContactDetails";
-
+import ContactDetails from './ContactDetails'
+import usePortfolio from '../../hooks/usePortfolio'
 
 const ContactInfo = () => {
-    const contacts = [
-        {
-            icon: faEnvelope,
-            label: "Email",
-            content: "jeffersonyepez621@gmail.com"
-        },
-        {
-            icon: faPhone,
-            label: "Phone",
-            content: "+593 97 939 5043"
-        },
-        {
-            icon: faLocationDot,
-            label: "Location",
-            content: "Ibarra, Ecuador"
-        }
-    ]
+  const { content } = usePortfolio()
 
-    return (
-        <div className="container-info-contact">
-            <h2>Contact Information</h2>
-            <p>I'm available for new projects and collaboration opportunities. Feel free to contact me through any of these channels.</p>
-            {contacts.map(contact => (<ContactDetails key={contact.label} {...contact} />))}
-        </div>
-    )
-};
+  return (
+    <div className="surface-panel rounded-[2rem] p-7 sm:p-8">
+      <h3 className="font-display text-3xl font-semibold tracking-[-0.05em] text-[var(--ink)]">
+        {content.contact.infoTitle}
+      </h3>
+      <p className="mt-4 text-base leading-8 text-[var(--muted)]">{content.contact.infoDescription}</p>
 
-export default ContactInfo;
+      <div className="mt-8 space-y-4">
+        {content.contact.details.map((detail) => (
+          <ContactDetails key={detail.label} {...detail} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default ContactInfo

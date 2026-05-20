@@ -1,19 +1,24 @@
-import React from "react";
-
+import usePortfolio from '../../../hooks/usePortfolio'
 
 const FooterQuickLinks = () => {
-    return (
-        <div className="quick-links">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#Hero">Hero</a></li>
-                <li><a href="#About">About me</a></li>
-                <li><a href="#Skills">Skills</a></li>
-                <li><a href="#Projects">Projects</a></li>
-                <li><a href="#Contact">Contact</a></li>
-            </ul>
-        </div>
-    )
-};
+  const { content } = usePortfolio()
 
-export default FooterQuickLinks;
+  return (
+    <div>
+      <h3 className="font-display text-xl font-semibold tracking-[-0.03em] text-[var(--ink)]">
+        {content.footer.quickLinksTitle}
+      </h3>
+      <ul className="mt-5 space-y-3">
+        {content.navLinks.map((link) => (
+          <li key={link.href}>
+            <a href={link.href} className="text-sm text-[var(--muted)] transition hover:text-[var(--accent)] sm:text-base">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export default FooterQuickLinks

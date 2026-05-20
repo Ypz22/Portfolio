@@ -1,33 +1,29 @@
-import React from "react";
-import SeccionIntro from "../SeccionIntro";
-import { introContact } from "../../data/introsData";
-import ContactInfo from "./ContactInfo";
-import ContactMe from "./ContactMe";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-
-import { useEffect } from "react";
+import SeccionIntro from '../SeccionIntro'
+import ContactInfo from './ContactInfo'
+import ContactMe from './ContactMe'
+import usePortfolio from '../../hooks/usePortfolio'
 
 const Contact = () => {
+  const { content } = usePortfolio()
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    }, []);
-
-    return (
-        <div className="container container-contact" data-aos="zoom-in" id="Contact">
-            <SeccionIntro {...introContact} />
-            <div className="contact-content">
-                <ContactInfo />
-                <ContactMe />
-            </div>
+  return (
+    <section id="Contact" className="section-anchor py-[clamp(4.5rem,8vw,6.5rem)]">
+      <div className="section-shell">
+        <div data-aos="fade-up">
+          <SeccionIntro {...content.sectionIntro.contact} />
         </div>
-    )
-};
 
-export default Contact;
+        <div className="mt-12 grid gap-6 lg:grid-cols-[minmax(320px,0.85fr)_minmax(0,1.15fr)]">
+          <div data-aos="fade-right">
+            <ContactInfo />
+          </div>
+          <div data-aos="fade-left">
+            <ContactMe />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Contact

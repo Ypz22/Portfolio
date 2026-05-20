@@ -1,23 +1,25 @@
-import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import usePortfolio from '../../hooks/usePortfolio'
 
-const ProjectsButtons = (props) => {
-    return (
-        <div className="container-buttons buttons-projects">
-            {props.project !== "" && <button>
-                <a href={props.project} target="_blank">
-                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> Project
-                </a>
-            </button>}
-            <button>
-                <a href={props.github} target="_blank">
-                    <FontAwesomeIcon icon={faGithub} /> GitHub
-                </a>
-            </button>
-        </div >
-    )
-};
+const ProjectsButtons = ({ project, github }) => {
+  const { content } = usePortfolio()
 
-export default ProjectsButtons;
+  return (
+    <div className="mt-6 flex flex-wrap gap-3">
+      {project && (
+        <a href={project} target="_blank" rel="noreferrer" className="primary-action">
+          <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+          {content.ui.liveProject}
+        </a>
+      )}
+      <a href={github} target="_blank" rel="noreferrer" className="secondary-action">
+        <FontAwesomeIcon icon={faGithub} />
+        {content.ui.sourceCode}
+      </a>
+    </div>
+  )
+}
+
+export default ProjectsButtons
